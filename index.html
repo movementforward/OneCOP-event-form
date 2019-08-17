@@ -21,7 +21,6 @@
     <!-- Vendor CSS-->
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
 </head>
@@ -34,63 +33,73 @@
                     <h2 class="title">Active Shooter and Emergency Preparedness Training</h2>
                 </div>
                 <div class="card-body">
-                    <form class="gform" method="POST" autocomplete="off" action="https://script.google.com/macros/s/AKfycbzlq3hpUDB9cs2xZgFl95Cy0jgsmYnGLnsP5vjTNKLvxHlgTBw/exec">
-                        <div class="form-row m-b-55">
-                            <div class="name">Name</div>
-                            <div class="value">
-                                <div class="row row-space">
-                                    <div class="col-5">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" id="title" name="title">
-                                            <label class="label--desc">title</label>
+                    <form class="gform" method="POST" id="registrationForm" autocomplete="off" action="https://script.google.com/macros/s/AKfycbzlq3hpUDB9cs2xZgFl95Cy0jgsmYnGLnsP5vjTNKLvxHlgTBw/exec">
+                        <div style="display:none" class="thankyou_message">
+                            <!-- You can customize the thankyou message by editing the code below -->
+                            <h2>
+                                Thank you for registering!
+                            </h2>
+                            <br />
+                            <button id="resetButton" class="btn btn--radius-2 btn--blue">New Registration</button>
+                        </div>
+                        <div class="form-elements">
+                            <div class="form-row m-b-55">
+                                <div class="name">Name</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-5">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" id="title" name="title">
+                                                <label class="label--desc">title</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="first_name" required>
+                                                <label class="label--desc">first name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="last_name" required>
+                                                <label class="label--desc">last name</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name" required>
-                                            <label class="label--desc">first name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name" required>
-                                            <label class="label--desc">last name</label>
-                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Affiliation</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" id="how" type="text" name="affiliation">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Affiliation</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" id="how" type="text" name="affiliation">
+                            <div class="form-row">
+                                <div class="name">Position</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="position">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Position</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="position">
+                            <div class="form-row">
+                                <div class="name">Email</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="email" name="email">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email">
-                                </div>
+
+                            <div>
+
+                                <button class="btn btn--radius-2 btn--blue" style="float:right;" type="submit">Register</button>
+                                <img src="logo.png" style="max-height: 110px; padding-top:10px" alt="logo" />
+                                <img src="believe_indy.png" style="max-height: 100px; padding-top:10px;" alt="logo" />
+
                             </div>
-                        </div>
-
-                        <div>
-
-                            <button class="btn btn--radius-2 btn--blue" style="float:right;" type="submit">Register</button>
-                            <img src="believe_indy.png" style="max-height: 100px; padding-top:10px;" alt="logo" />
-                            <img src="logo.png" style="max-height: 110px; padding-top:10px" alt="logo" />
-
                         </div>
                     </form>
                 </div>

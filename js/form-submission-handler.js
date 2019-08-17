@@ -48,7 +48,6 @@
     formData.formGoogleSend
       = form.dataset.email || ""; // no email by default
 
-    console.log(formData);
     return { data: formData, honeypot: honeypot };
   }
 
@@ -71,11 +70,9 @@
     // xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
-      console.log(xhr.status, xhr.statusText);
-      console.log(xhr.responseText);
       form.reset();
       reenableButton(form);
-      /*
+      
       var formElements = form.querySelector(".form-elements")
       if (formElements) {
         formElements.style.display = "none"; // hide form
@@ -84,16 +81,31 @@
       if (thankYouMessage) {
         thankYouMessage.style.display = "block";
       }
-      */
+      
 
       return;
     };
+
     // url encode form data for sending as post data
     var encoded = Object.keys(data).map(function (k) {
       return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
     }).join('&');
     xhr.send(encoded);
   }
+
+  function resetForm(event) {
+    console.log("resetting");
+    event.preventDefault();  
+    var form = document.getElementById("registrationForm")
+    var formElements = form.querySelector(".form-elements")
+    if (formElements) {
+      formElements.style.display = "block"; // show form
+    }
+    var thankYouMessage = form.querySelector(".thankyou_message");
+    if (thankYouMessage) {
+      thankYouMessage.style.display = "none";
+    }
+  };
 
   function loaded() {
     console.log("Contact form submission handler loaded successfully.");
@@ -102,6 +114,8 @@
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener("submit", handleFormSubmit, false);
     }
+
+    document.getElementById("resetButton").addEventListener("click", resetForm, false);
   };
   document.addEventListener("DOMContentLoaded", loaded, false);
 
