@@ -120,16 +120,14 @@
   document.addEventListener("DOMContentLoaded", loaded, false);
 
   function disableAllButtons(form) {
-    var buttons = form.querySelectorAll("button");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].disabled = true;
-    }
+    var button = document.getElementById("submitBtn");
+    button.innerHTML = "Processing...";
+    button.disabled = true;
   }
 
   function reenableButton(form) {
-    var buttons = form.querySelectorAll("button");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].disabled = false;
-    }
+    var button = document.getElementById("submitBtn");
+    button.innerHTML = "Register";
+    button.disabled = false;
   }
 })();
