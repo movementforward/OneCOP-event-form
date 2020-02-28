@@ -93,6 +93,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <input type="hidden" name="event" value="Athens Active Shooter Event">
                             <div>
                                 <button class="btn btn--radius-2 btn--blue" id="submitBtn" style="float:right;" type="submit">Register</button>
                                 <img src="logo.png" style="max-height: 110px; padding-top:10px" alt="logo" />
@@ -211,8 +212,9 @@
                 closeAllLists(e.target);
             });
         }
+
         $(function () {
-            var sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1ZahmVF0j6pMF48rajaB8taI7BYzJIzhz_7_VwQ24hOo/1/public/full?alt=json';
+            var sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1tzcVuH7F6LeOgQZYPNtqa_OES15KzO92fZj-IrnuWJ8/2/public/full?alt=json';
             $.getJSON(sheetUrl, function (data) {
                 var entry = data.feed.entry;
                 var hows = [];
@@ -225,7 +227,7 @@
         });
 
         $(function () {
-            var sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1inkvB-D0eXjqtPHd7I_ET_MlvG60DnG7CFshDOzorBk/1/public/full?alt=json';
+            var sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1tzcVuH7F6LeOgQZYPNtqa_OES15KzO92fZj-IrnuWJ8/3/public/full?alt=json';
             $.getJSON(sheetUrl, function (data) {
                 var entry = data.feed.entry;
                 var titles = [];
