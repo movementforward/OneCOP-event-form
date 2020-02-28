@@ -238,6 +238,20 @@
                 autocomplete(document.getElementById("title"), titles);
             })
         });
+
+        $(function () {
+            var sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1tzcVuH7F6LeOgQZYPNtqa_OES15KzO92fZj-IrnuWJ8/1/public/full?alt=json';
+            $.getJSON(sheetUrl, function (data) {
+                var entry = data.feed.entry;
+                var config = [];
+
+                for (var i = 0; i < entry.length; i++) {
+                    titles.push(entry[i].content['$t']);
+                }
+                console.log(config);
+            })
+        });
+
     </script>
     <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
