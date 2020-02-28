@@ -249,8 +249,8 @@
                     "date": entries[last]['gsx$date']['$t']
                 };
 
-                document.getElementById("eventTitle").innerHTML(config.event);
-                document.getElementById("eventTitleInput").value(config.event); 
+                document.getElementById("eventTitle").innerText = config.event;
+                document.getElementById("eventTitleInput").value = config.event; 
             })
         });
 
