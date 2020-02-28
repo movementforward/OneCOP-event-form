@@ -243,9 +243,13 @@
             var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1tzcVuH7F6LeOgQZYPNtqa_OES15KzO92fZj-IrnuWJ8/1/public/full?alt=json';
             $.getJSON(sheetUrl, function (data) {
                 var entries = data.feed.entry;
-                var config = [];
-                console.log(data.feed.entry[0]['gsx$event']['$t']);
-                console.log(data.feed.entry[0]['gsx$date']['$t']);
+                var last = entries.length - 1
+                var config = {
+                    "event": entries[last]['gsx$event']['$t'],
+                    "date": entries[last]['gsx$date']['$t']
+                };
+
+                console.log(config)
             })
         });
 
