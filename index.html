@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="event" value="Athens Active Shooter Event">
+                            <input type="hidden" name="event" id="eventTitleInput" value="Athens Active Shooter Event">
                             <div>
                                 <button class="btn btn--radius-2 btn--blue" id="submitBtn" style="float:right;" type="submit">Register</button>
                                 <img src="logo.png" style="max-height: 110px; padding-top:10px" alt="logo" />
@@ -249,7 +249,8 @@
                     "date": entries[last]['gsx$date']['$t']
                 };
 
-                console.log(config.event);
+                document.getElementById("eventTitle").innerHTML(config.event);
+                document.getElementById("eventTitleInput").value(config.event); 
             })
         });
 
