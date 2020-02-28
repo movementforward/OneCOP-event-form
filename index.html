@@ -34,7 +34,7 @@
                     <h2 class="title" id="eventTitle">OneCOP Event</h2>
                 </div>
                 <div class="card-body">
-                    <form class="gform" method="POST" id="registrationForm" autocomplete="off" action="https://script.google.com/macros/s/AKfycbzlq3hpUDB9cs2xZgFl95Cy0jgsmYnGLnsP5vjTNKLvxHlgTBw/exec">
+                    <form class="gform" method="POST" id="registrationForm" autocomplete="off" id="registrationForm" action="https://script.google.com/macros/s/AKfycbzlq3hpUDB9cs2xZgFl95Cy0jgsmYnGLnsP5vjTNKLvxHlgTBw/exec">
                         <div style="display:none" class="thankyou_message">
                             <!-- You can customize the thankyou message by editing the code below -->
                             <h2>
@@ -246,11 +246,13 @@
                 var last = entries.length - 1
                 var config = {
                     "event": entries[last]['gsx$event']['$t'],
-                    "date": entries[last]['gsx$date']['$t']
+                    "date": entries[last]['gsx$date']['$t'],
+                    "email": entries[last]['gsx$email']['$t']
                 };
 
                 document.getElementById("eventTitle").innerText = config.event;
                 document.getElementById("eventTitleInput").value = config.event; 
+                document.getElementById("registrationForm").setAttribute('data-email', email);
             })
         });
 
